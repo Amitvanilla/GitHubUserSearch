@@ -22,13 +22,13 @@ const UserSearch = () => {
             setLoading(true);
             setError(null);
             const response = await axios.get(
-                `${process.env.REACT_APP_GITHUB_URL}?q=${searchTerm}&sort=followers&page=${currentPage}&per_page=${perPage}`,
-                {
-                    headers: {
-                        'Authorization': process.env.REACT_APP_GITHUB_TOKEN,
-                        'X-GitHub-Api-Version': '2022-11-28'
-                    }
-                }
+                `https://api.github.com/search/users?q=${searchTerm}&sort=followers&page=${currentPage}&per_page=${perPage}`,
+                // {
+                //     headers: {
+                //         'Authorization': 'Bearer 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',
+                //         'X-GitHub-Api-Version': '2022-11-28'
+                //     }
+                // }
             );
             if (response.data.total_count === 0) {
                 setSearchResults([]);
