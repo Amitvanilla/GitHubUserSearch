@@ -22,10 +22,10 @@ const UserSearch = () => {
             setLoading(true);
             setError(null);
             const response = await axios.get(
-                `https://api.github.com/search/users?q=${searchTerm}&sort=followers&page=${currentPage}&per_page=${perPage}`,
+                `${process.env.REACT_APP_GITHUB_URL}?q=${searchTerm}&sort=followers&page=${currentPage}&per_page=${perPage}`,
                 {
                     headers: {
-                        'Authorization': `Bearer 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`,
+                        'Authorization': process.env.REACT_APP_GITHUB_TOKEN,
                         'X-GitHub-Api-Version': '2022-11-28'
                     }
                 }
