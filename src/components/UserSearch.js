@@ -25,7 +25,7 @@ const UserSearch = () => {
                 `https://api.github.com/search/users?q=${searchTerm}&sort=followers&page=${currentPage}&per_page=${perPage}`,
                 {
                     headers: {
-                        'Authorization': `Bearer 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`,
+                        'Authorization': `Bearer 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`,
                         'X-GitHub-Api-Version': '2022-11-28'
                     }
                 }
