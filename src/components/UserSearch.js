@@ -33,7 +33,7 @@ const UserSearch = () => {
             if (response.data.total_count === 0) {
                 setSearchResults([]);
                 setCurrentPage(1)
-                setError('No users found for the given search term.');
+                setError('No users found !');
             } else {
                 const users = response.data.items;
                 setSearchResults(users);
